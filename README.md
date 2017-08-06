@@ -1,6 +1,16 @@
 # ReactNativeWithFirebase
 
-เอาไปทำตามได้เลยครับ
+จากตัวอย่างของ firebase เอง 
+
+https://firebase.googleblog.com/2016/01/the-beginners-guide-to-react-native-and_84.html
+
+เอามาแก้ 
+-Syntax ผิด
+-รันบน Android
+-เอา AlertIOS ออกเพราะใช้ได้แค่ IOS หา libary ใหม่มาใช้แทน
+-ใช้ NativeBase ด้วยเอามายำๆ รวมกัน
+
+สามารถเอาไปทำตามได้เลยครับ
 
 1. พิมพ์ git clone https://github.com/taforyou/ReactNativeWithFirebase.git 
 2. พิมพ์ cd ReactNativeWithFirebase
