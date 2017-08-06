@@ -98,8 +98,9 @@ export default class NativeBaseFirebase extends Component {
     );
   }
 
-  _addItem() {
-    // this.setState({ promptVisible: true })
+  handleToggleAlert() {
+    this.setState({ promptVisible: true })
+    // สิ่งที่ควรจะทำเมื่อเป็น IOS แต่ทำให้ต้องใช้ท่าอ้อมเพราะเราอยากจะทำบน Android ได้ (เดี๋ยวถ้ามีเวลาจะหาท่าที่ดีกว่านี้มากให้)
     // AlertIOS.prompt(
     //   'Add New Item',
     //   null,
@@ -115,11 +116,31 @@ export default class NativeBaseFirebase extends Component {
     // );
   }
 
+  handleAddItem(value) {
+    //(value) => this.setState({ promptVisible: false, message: `You said "${value}"` })
+    // value คือ ค่าที่พิมพ์มาจาก alertTextbox
+    this.itemsRef.push({ title: value })
+    this.setState({ promptVisible: false })
+
+  }
+
+
+
   render() {
     return (
 
 
       <Container style={styles.container}>
+
+        <Prompt
+          title="Say something"
+          placeholder="Start typing"
+          defaultValue="Hello"
+          visible={this.state.promptVisible}
+          onCancel={() => this.setState({ promptVisible: false, message: "You cancelled" })}
+          onSubmit={this.handleAddItem.bind(this)}
+        />
+
         <Header>
           <Left>
             <Button transparent onPress={() => this.props.navigation.goBack()}>
@@ -185,23 +206,8 @@ export default class NativeBaseFirebase extends Component {
 
             {/*<ActionButton title="Add" onpress={this._addItem.bind(this)} />*/}
             {/* ตรงนี้ Handle onPress เพื่อไปเด้ง Component มา*/}
-            <Button full success style={{marginTop: 15}} onPress={this._addItem.bind(this)}><Text>Add</Text></Button>
+            <Button full success style={{marginTop: 15}} onPress={this.handleToggleAlert.bind(this)}><Text>Add</Text></Button>
 
-            <Prompt
-                title="Say something"
-                placeholder="Start typing"
-                defaultValue="Hello"
-                visible={ this.state.promptVisible }
-                onCancel={ () => this.setState({
-                  promptVisible: false,
-                  message: "You cancelled"
-                }) }
-
-                onSubmit={ (value) => this.setState({
-                  promptVisible: false,
-                  message: "test"
-                }) }
-            />
 
           </View>
 
