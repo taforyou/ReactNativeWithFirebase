@@ -1,3 +1,5 @@
 # ReactNativeWithFirebase
 
-https://github.com/jaysoo/react-native-prompt
+เอาไปทำตามได้เลยครับ
+
+clone ไปแล้ว npm install ใช้ได้เลยครับ
