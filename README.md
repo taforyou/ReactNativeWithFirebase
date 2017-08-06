@@ -5,6 +5,7 @@
 https://firebase.googleblog.com/2016/01/the-beginners-guide-to-react-native-and_84.html
 
 เอามาแก้ 
+
 -Syntax ผิด
 -รันบน Android
 -เอา AlertIOS ออกเพราะใช้ได้แค่ IOS หา libary ใหม่มาใช้แทน
