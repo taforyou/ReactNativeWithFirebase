@@ -1,0 +1,3 @@
+rootProject.name = 'NativeBaseFirebase'
+
+include ':app'
